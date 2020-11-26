@@ -22,19 +22,19 @@ spec:
             containerPort: 8080
           - name: jnlp-port
             containerPort: 50000
-        volumeMounts:
-          - name: talentmanager-backend-data
-            mountPath: "/var/talentmanager-backend_home"
-          - mountPath: /var/run/docker.sock
-            name: dockersock
-            readOnly: false
-      volumes:
-        - name: talentmanager-backend-data
-          persistentVolumeClaim:
-            claimName: talentmanager-backendgluster-claim
-        - name: dockersock
-          hostPath:
-            path: /var/run/docker.sock
+#        volumeMounts:
+#          - name: talentmanager-backend-data
+#            mountPath: "/var/talentmanager-backend_home"
+#          - mountPath: /var/run/docker.sock
+#            name: dockersock
+#            readOnly: false
+#      volumes:
+#        - name: talentmanager-backend-data
+#          persistentVolumeClaim:
+#            claimName: talentmanager-backendgluster-claim
+#        - name: dockersock
+#          hostPath:
+#            path: /var/run/docker.sock
 ---
 apiVersion: v1
 kind: Service
